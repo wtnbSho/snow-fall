@@ -30,32 +30,30 @@
 
 
 
-let snowContainer = document.querySelector('.snow-container');
+setInterval(() => {
+	document.querySelector('body').style.opacity = 1;
+},0);
+const snowContainer = document.querySelector('.snow-container');
+/* 雪関数 */
 const createSnow = () => {
-	/* 雪の要素を生成 */
-	let snow = document.createElement('span');
-	snow.className = 'snow';
-
-	minSize = 5;
-	maxSize = 10;
-
+	const snow = document.createElement('span');
+	/* 雪の要素生成 */
+	snow.classList.add('snow');
+	const minSize = 5;
+	const maxSize = 10;
 	/* 雪の大きさをランダムに決める */
-	let snowSize = Math.random() * (maxSize  - minSize) + minSize;
-
+	const snowSize = Math.random() * (maxSize - minSize) + minSize;
 	snow.style.width = snowSize + 'px';
 	snow.style.height = snowSize + 'px';
-
 	/* 雪の降り始めの位置を決定する */
 	snow.style.left = Math.random() * 100 + '%';
 
 	snowContainer.appendChild(snow);
 
-	/* 10秒後に雪を消す */
 	setTimeout(() => {
 		snow.remove();
-	}, 10000);
+	},10000);
 };
-
-setInterval (() => {
+setInterval(() => {
 	createSnow();
 }, 100);

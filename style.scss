@@ -2,6 +2,10 @@
 	margin: 0;
 	padding: 0;
 }
+body {
+	opacity: 0;
+	transition: opacity 1s;
+}
 .snow-container {
 	background-image: url(../../images/san4.webp);
 	width: 100%;
