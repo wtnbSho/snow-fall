@@ -30,9 +30,7 @@
 
 
 
-setInterval(() => {
-	document.querySelector('body').style.opacity = 1;
-},0);
+
 const snowContainer = document.querySelector('.snow-container');
 /* 雪関数 */
 const createSnow = () => {
@@ -54,6 +52,11 @@ const createSnow = () => {
 		snow.remove();
 	},10000);
 };
+
+setInterval(() => {
+	document.querySelector('body').style.opacity = 1;
+},100);
+
 setInterval(() => {
 	createSnow();
 }, 100);
